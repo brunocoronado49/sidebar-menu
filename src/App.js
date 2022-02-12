@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { Route } from 'wouter';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Work from './pages/Work';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <section className="App-content">
+        <Route path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact} />
+        <Route path='/work' component={Work} />
+      </section>
     </div>
   );
 }
